@@ -7,7 +7,7 @@ import javax.persistence.*;
 @Entity
 public class Order {
 	
-	@Id @GeneratedValue
+	@Id
 	private Integer order_id;
 	private Double total_order_price;
 	
