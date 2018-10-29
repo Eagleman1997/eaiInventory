@@ -5,9 +5,15 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import eaiproject.eaiprojectInventory.data.domain.Customer;
 import eaiproject.eaiprojectInventory.data.domain.Inventory;
+import eaiproject.eaiprojectInventory.data.domain.Order;
+import eaiproject.eaiprojectInventory.data.domain.PackingSlip;
 import eaiproject.eaiprojectInventory.data.domain.Shampoo;
+import eaiproject.eaiprojectInventory.data.repository.CustomerRepository;
 import eaiproject.eaiprojectInventory.data.repository.InventoryRepository;
+import eaiproject.eaiprojectInventory.data.repository.OrderRepository;
+import eaiproject.eaiprojectInventory.data.repository.PackingSlipRepository;
 import eaiproject.eaiprojectInventory.data.repository.ShampooRepository;
 
 public class InventoryService {
@@ -15,6 +21,9 @@ public class InventoryService {
 	@Autowired
 	private InventoryRepository inventoryRepository;
 	private ShampooRepository shampooRespository;
+	private OrderRepository orderRepository;
+	private PackingSlipRepository packingSlipRepository;
+	private CustomerRepository customerRepository;
 	
 	/**
 	 * Invenvory
@@ -51,6 +60,62 @@ public class InventoryService {
 		shampoo.setShampoo_id(Integer.parseInt(shampoo_id));
 		return shampooRespository.save(shampoo);
 	}
+	
+	/**
+	 * Order
+	 */
+	public Order createOrder(Integer order_id, Double total_order_price) {
+		Order order = new Order(order_id, total_order_price);
+		return orderRepository.save(order);
+	}
+	
+	public List<Order> readOrderById(String orderId) {
+		return orderRepository.findOrderByOrderId(Integer.parseInt(orderId));
+	}
+	
+	public Order updateOrder(String order_id, Double total_order_price) {
+		Order order = new Order(Integer.parseInt(order_id), total_order_price);
+		order.setOrder_id(Integer.parseInt(order_id));
+		return orderRepository.save(order);
+	}
+	
+	/**
+	 * PackingSlip
+	 */
+	public PackingSlip createPackingSlip(Integer packing_slip_id) {
+		PackingSlip packingSlip = new PackingSlip(packing_slip_id);
+		return packingSlipRepository.save(packingSlip);
+	}
+	
+	public PackingSlip readPackingSlipById(String packingSlipId) {
+		return packingSlipRepository.findPackingSlipByPackingSlipId(Integer.parseInt(packingSlipId));
+	}
+	
+	public PackingSlip updatePackingSlip(String packing_slip_id) {
+		PackingSlip packingSlip = new PackingSlip(Integer.parseInt(packing_slip_id));
+		packingSlip.setPacking_slip_id(Integer.parseInt(packing_slip_id));
+		return packingSlipRepository.save(packingSlip);
+	}	
+	
+	/**
+	 * Customer
+	 */
+
+	public Customer createCustomer(Integer customer_id, String first_name,String last_name, String shipping_address_name, String shipping_address_street, String shipping_address_location) {
+		Customer customer = new Customer(customer_id, first_name, last_name, shipping_address_name, shipping_address_street, shipping_address_location);
+		return customerRepository.save(customer);
+	}
+	
+	public Customer readCustomerById(String customer_id) {
+		return customerRepository.findCustomerByCustomerId(Integer.parseInt(customer_id));
+	}
+	
+	public Customer updateCustomer(String customer_id, String first_name,String last_name, String shipping_address_name, String shipping_address_street, String shipping_address_location) {
+		Customer customer = new Customer(Integer.parseInt(customer_id), first_name, last_name, shipping_address_name, shipping_address_street, shipping_address_location);
+		customer.setCustomer_id(Integer.parseInt(customer_id));
+		return customerRepository.save(customer);
+	}
+	
 	
 
 }
