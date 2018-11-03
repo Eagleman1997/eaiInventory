@@ -10,6 +10,6 @@ import eaiproject.eaiprojectInventory.data.domain.Customer;
 
 public interface CustomerRepository extends JpaRepository<Customer, Integer>{
 	
-	public Customer findCustomerByCustomerId(@Param("order_id") Integer OrderId);
+	public Customer findCustomerByCustomerId(@Param("customer_id") Integer CustomerId);
 
 }
