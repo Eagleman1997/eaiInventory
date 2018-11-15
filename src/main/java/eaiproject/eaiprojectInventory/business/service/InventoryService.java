@@ -1,7 +1,11 @@
 package eaiproject.eaiprojectInventory.business.service;
 
-import java.util.Date;
 import java.util.List;
+import java.util.UUID;
+
+import org.springframework.stereotype.Service;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -24,6 +28,20 @@ public class InventoryService {
 	private OrderRepository orderRepository;
 	private PackingSlipRepository packingSlipRepository;
 	private CustomerRepository customerRepository;
+	
+	private Logger logger = LoggerFactory.getLogger(InventoryService.class);
+	
+    public PackingSlip fetchGoods(Long customerId, String reference, List<Order> items) throws Exception {
+        logger.info("fetchGoods() with customerId " + customerId + " and reference " + reference + " called and going to pick "+ items.size() +" items in the inventory");
+        for(long seconds = items.size(); seconds > 0; seconds--) {
+            logger.info(seconds + " items remaining");
+            Thread.sleep(1000);
+        }
+        // ...
+        PackingSlip packingSlip = new PackingSlip();
+        logger.info("Packing slip generated with packing slip id: " + packingSlip.getPacking_slip_id());
+        return packingSlip;
+    }
 	
 	/**
 	 * Invenvory

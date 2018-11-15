@@ -35,6 +35,7 @@ public class PackingSlip {
 	public void setPacking_slip_id(Integer packing_slip_id) {
 		this.packing_slip_id = packing_slip_id;
 	}
+	
 
 	
 }
