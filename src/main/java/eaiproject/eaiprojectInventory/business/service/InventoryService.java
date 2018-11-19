@@ -31,8 +31,12 @@ public class InventoryService {
 	
 	private Logger logger = LoggerFactory.getLogger(InventoryService.class);
 	
-    public PackingSlip fetchGoods(Long customerId, String reference, List<Order> items) throws Exception {
+    public PackingSlip fetchGoods(Long customerId, String reference, List<Shampoo> items) throws Exception {
         logger.info("fetchGoods() with customerId " + customerId + " and reference " + reference + " called and going to pick "+ items.size() +" items in the inventory");
+        logger.info("In the basket are this items: ");
+        for (Shampoo shampoo : items) {
+        	logger.info("Name: " + shampoo.getName(), "Brand: " + shampoo.getBrand() + " Type: " + shampoo.getType());
+        }
         for(long seconds = items.size(); seconds > 0; seconds--) {
             logger.info(seconds + " items remaining");
             Thread.sleep(1000);
@@ -113,27 +117,6 @@ public class InventoryService {
 		PackingSlip packingSlip = new PackingSlip(Integer.parseInt(packing_slip_id));
 		packingSlip.setPacking_slip_id(Integer.parseInt(packing_slip_id));
 		return packingSlipRepository.save(packingSlip);
-	}	
-	
-	/**
-	 * Customer
-	 */
-
-	public Customer createCustomer(Integer customer_id, String first_name,String last_name, String shipping_address_name, String shipping_address_street, String shipping_address_location) {
-		Customer customer = new Customer(customer_id, first_name, last_name, shipping_address_name, shipping_address_street, shipping_address_location);
-		return customerRepository.save(customer);
-	}
-	
-	public Customer readCustomerById(String customer_id) {
-		return customerRepository.findCustomerByCustomerId(Integer.parseInt(customer_id));
-	}
-	
-	public Customer updateCustomer(String customer_id, String first_name,String last_name, String shipping_address_name, String shipping_address_street, String shipping_address_location) {
-		Customer customer = new Customer(Integer.parseInt(customer_id), first_name, last_name, shipping_address_name, shipping_address_street, shipping_address_location);
-		customer.setCustomer_id(Integer.parseInt(customer_id));
-		return customerRepository.save(customer);
-	}
-	
-	
+	}		
 
 }

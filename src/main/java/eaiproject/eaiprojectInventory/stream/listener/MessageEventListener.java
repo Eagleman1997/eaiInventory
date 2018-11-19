@@ -22,6 +22,7 @@ import org.springframework.transaction.annotation.Transactional;
 import eaiproject.eaiprojectInventory.business.service.InventoryService;
 import eaiproject.eaiprojectInventory.data.domain.Order;
 import eaiproject.eaiprojectInventory.data.domain.PackingSlip;
+import eaiproject.eaiprojectInventory.data.domain.Shampoo;
 import eaiproject.eaiprojectInventory.stream.message.EventMessage;
 import eaiproject.eaiprojectInventory.stream.message.OrderMessage;
 import eaiproject.eaiprojectInventory.stream.sender.MessageEventSender;
@@ -47,7 +48,7 @@ public class MessageEventListener {
     public void payment(@Payload EventMessage<OrderMessage> eventMessage) throws Exception {
         OrderMessage orderMessage = eventMessage.getPayload();
         logger.info("Payload received: "+orderMessage.toString());
-        List<Order> orderItems = objectMapper.convertValue(orderMessage.getItems(), new TypeReference<List<Order>>() {});
+        List<Shampoo> orderItems = objectMapper.convertValue(orderMessage.getItems(), new TypeReference<List<Shampoo>>() {});
         PackingSlip packingSlip = inventoryService.fetchGoods(Long.valueOf(orderMessage.getCustomerId()), orderMessage.getOrderId(), orderItems);
         orderMessage.setPackingSlipId(packingSlip.getPacking_slip_id().toString());
         orderMessage.setStatus("GoodsFetched");
