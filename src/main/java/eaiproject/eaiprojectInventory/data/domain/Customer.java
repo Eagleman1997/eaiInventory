@@ -4,6 +4,15 @@ import java.util.List;
 
 import javax.persistence.*;
 
+enum CustomerType {
+	vip1,
+	vip2,
+	vip3,
+	vip4,
+	vip5
+}
+
+
 @Entity
 public class Customer {
 	
@@ -11,17 +20,15 @@ public class Customer {
 	private Integer customer_id;
 	private String first_name;
 	private String last_name;
+	private String creditcard_provider;
+	private String creditcard_number;
 	private String shipping_address_name;
 	private String shipping_address_street;
 	private String shipping_address_location;
+
+	private Integer nmbr_of_loyalty_points;
+	private CustomerType customerType;
 	
-	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "customer_fk")
-	private List<Order> orders;
-	
-	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "customer_fk")
-	private List<PackingSlip> packing_slips;
 	
 
 	public Customer() {
@@ -70,6 +77,26 @@ public class Customer {
 	}
 
 
+	public String getCreditcard_provider() {
+		return creditcard_provider;
+	}
+
+
+	public void setCreditcard_provider(String creditcard_provider) {
+		this.creditcard_provider = creditcard_provider;
+	}
+
+
+	public String getCreditcard_number() {
+		return creditcard_number;
+	}
+
+
+	public void setCreditcard_number(String creditcard_number) {
+		this.creditcard_number = creditcard_number;
+	}
+
+
 	public String getShipping_address_name() {
 		return shipping_address_name;
 	}
@@ -100,23 +127,23 @@ public class Customer {
 	}
 
 
-	public List<Order> getOrders() {
-		return orders;
+	public Integer getNmbr_of_loyalty_points() {
+		return nmbr_of_loyalty_points;
 	}
 
 
-	public void setOrders(List<Order> orders) {
-		this.orders = orders;
+	public void setNmbr_of_loyalty_points(Integer nmbr_of_loyalty_points) {
+		this.nmbr_of_loyalty_points = nmbr_of_loyalty_points;
+	}
+	
+	
+	public CustomerType getCustomerType() {
+		return customerType;
 	}
 
-
-	public List<PackingSlip> getPacking_slips() {
-		return packing_slips;
+	public void setCustomerType(CustomerType customerType) {
+		this.customerType = customerType;
 	}
-
-
-	public void setPacking_slips(List<PackingSlip> packing_slips) {
-		this.packing_slips = packing_slips;
-	}
+	
 	
 }
