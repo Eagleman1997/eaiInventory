@@ -1,0 +1,40 @@
+2018-12-03 11:54:01 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax Fehler in SQL Befehl "DROP TABLE ORDER[*] IF EXISTS "; erwartet "identifier"
+Syntax error in SQL statement "DROP TABLE ORDER[*] IF EXISTS "; expected "identifier"; SQL statement:
+drop table order if exists [42001-197]
+2018-12-03 11:54:01 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax Fehler in SQL Befehl "CREATE TABLE ORDER[*] (ORDER_ID INTEGER NOT NULL, TOTAL_ORDER_PRICE DOUBLE, PRIMARY KEY (ORDER_ID)) "; erwartet "identifier"
+Syntax error in SQL statement "CREATE TABLE ORDER[*] (ORDER_ID INTEGER NOT NULL, TOTAL_ORDER_PRICE DOUBLE, PRIMARY KEY (ORDER_ID)) "; expected "identifier"; SQL statement:
+create table order (order_id integer not null, total_order_price double, primary key (order_id)) [42001-197]
+2018-12-03 11:54:01 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax Fehler in SQL Befehl "ALTER TABLE PACKING_SLIP ADD CONSTRAINT FKD0PAC2RB6DT38UXPXRRVBUVJO FOREIGN KEY (ORDER_FK) REFERENCES ORDER[*] "; erwartet "identifier"
+Syntax error in SQL statement "ALTER TABLE PACKING_SLIP ADD CONSTRAINT FKD0PAC2RB6DT38UXPXRRVBUVJO FOREIGN KEY (ORDER_FK) REFERENCES ORDER[*] "; expected "identifier"; SQL statement:
+alter table packing_slip add constraint FKd0pac2rb6dt38uxpxrrvbuvjo foreign key (order_fk) references order [42001-197]
+2018-12-03 11:54:01 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax Fehler in SQL Befehl "ALTER TABLE SHAMPOO ADD CONSTRAINT FKADB1UVAJX7MSAMY6T3564NP8O FOREIGN KEY (ORDER_FK) REFERENCES ORDER[*] "; erwartet "identifier"
+Syntax error in SQL statement "ALTER TABLE SHAMPOO ADD CONSTRAINT FKADB1UVAJX7MSAMY6T3564NP8O FOREIGN KEY (ORDER_FK) REFERENCES ORDER[*] "; expected "identifier"; SQL statement:
+alter table shampoo add constraint FKadb1uvajx7msamy6t3564np8o foreign key (order_fk) references order [42001-197]
+2018-12-03 11:54:01 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax Fehler in SQL Befehl "DROP TABLE ORDER[*] IF EXISTS "; erwartet "identifier"
+Syntax error in SQL statement "DROP TABLE ORDER[*] IF EXISTS "; expected "identifier"; SQL statement:
+drop table order if exists [42001-197]
+2018-12-03 11:59:01 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax Fehler in SQL Befehl "DROP TABLE ORDER[*] IF EXISTS "; erwartet "identifier"
+Syntax error in SQL statement "DROP TABLE ORDER[*] IF EXISTS "; expected "identifier"; SQL statement:
+drop table order if exists [42001-197]
+2018-12-03 11:59:01 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax Fehler in SQL Befehl "CREATE TABLE ORDER[*] (ORDER_ID INTEGER NOT NULL, TOTAL_ORDER_PRICE DOUBLE, PRIMARY KEY (ORDER_ID)) "; erwartet "identifier"
+Syntax error in SQL statement "CREATE TABLE ORDER[*] (ORDER_ID INTEGER NOT NULL, TOTAL_ORDER_PRICE DOUBLE, PRIMARY KEY (ORDER_ID)) "; expected "identifier"; SQL statement:
+create table order (order_id integer not null, total_order_price double, primary key (order_id)) [42001-197]
+2018-12-03 11:59:01 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax Fehler in SQL Befehl "ALTER TABLE PACKING_SLIP ADD CONSTRAINT FKD0PAC2RB6DT38UXPXRRVBUVJO FOREIGN KEY (ORDER_FK) REFERENCES ORDER[*] "; erwartet "identifier"
+Syntax error in SQL statement "ALTER TABLE PACKING_SLIP ADD CONSTRAINT FKD0PAC2RB6DT38UXPXRRVBUVJO FOREIGN KEY (ORDER_FK) REFERENCES ORDER[*] "; expected "identifier"; SQL statement:
+alter table packing_slip add constraint FKd0pac2rb6dt38uxpxrrvbuvjo foreign key (order_fk) references order [42001-197]
+2018-12-03 11:59:01 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax Fehler in SQL Befehl "ALTER TABLE SHAMPOO ADD CONSTRAINT FKADB1UVAJX7MSAMY6T3564NP8O FOREIGN KEY (ORDER_FK) REFERENCES ORDER[*] "; erwartet "identifier"
+Syntax error in SQL statement "ALTER TABLE SHAMPOO ADD CONSTRAINT FKADB1UVAJX7MSAMY6T3564NP8O FOREIGN KEY (ORDER_FK) REFERENCES ORDER[*] "; expected "identifier"; SQL statement:
+alter table shampoo add constraint FKadb1uvajx7msamy6t3564np8o foreign key (order_fk) references order [42001-197]
+2018-12-03 11:59:01 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax Fehler in SQL Befehl "DROP TABLE ORDER[*] IF EXISTS "; erwartet "identifier"
+Syntax error in SQL statement "DROP TABLE ORDER[*] IF EXISTS "; expected "identifier"; SQL statement:
+drop table order if exists [42001-197]

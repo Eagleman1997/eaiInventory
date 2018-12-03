@@ -20,6 +20,7 @@ import eaiproject.eaiprojectInventory.data.repository.OrderRepository;
 import eaiproject.eaiprojectInventory.data.repository.PackingSlipRepository;
 import eaiproject.eaiprojectInventory.data.repository.ShampooRepository;
 
+@Service
 public class InventoryService {
 	
 	@Autowired
