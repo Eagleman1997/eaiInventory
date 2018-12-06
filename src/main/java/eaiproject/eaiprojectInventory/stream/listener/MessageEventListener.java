@@ -50,7 +50,7 @@ public class MessageEventListener {
         logger.info("Payload received: "+orderMessage.toString());
         List<Shampoo> orderItems = objectMapper.convertValue(orderMessage.getItems(), new TypeReference<List<Shampoo>>() {});
         PackingSlip packingSlip = inventoryService.fetchGoods(Long.valueOf(orderMessage.getCustomerId()), orderMessage.getOrderId(), orderItems);
-        orderMessage.setPackingSlipId(packingSlip.getPacking_slip_id().toString());
+        orderMessage.setPackingSlipId(packingSlip.getPackingSlipId().toString());
         orderMessage.setStatus("GoodsFetched");
         messageEventSender.send(new EventMessage<>("ShipGoods", orderMessage));
     }

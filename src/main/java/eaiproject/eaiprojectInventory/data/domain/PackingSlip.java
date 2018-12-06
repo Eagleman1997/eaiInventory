@@ -8,7 +8,7 @@ import javax.persistence.*;
 public class PackingSlip {
 	
 	@Id @GeneratedValue
-	private Integer packing_slip_id;
+	private Integer packingSlipId;
 	
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "packing_slip_fk")
@@ -23,17 +23,17 @@ public class PackingSlip {
 	}
 
 	
-	public PackingSlip(Integer packing_slip_id) {
-		this.packing_slip_id = packing_slip_id;
+	public PackingSlip(Integer packingSlipId) {
+		this.packingSlipId = packingSlipId;
 	}
 
 
-	public Integer getPacking_slip_id() {
-		return packing_slip_id;
+	public Integer getPackingSlipId() {
+		return packingSlipId;
 	}
 
-	public void setPacking_slip_id(Integer packing_slip_id) {
-		this.packing_slip_id = packing_slip_id;
+	public void setPackingSlipId(Integer packingSlipId) {
+		this.packingSlipId = packingSlipId;
 	}
 	
 

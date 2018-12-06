@@ -44,7 +44,7 @@ public class InventoryService {
         }
         // ...
         PackingSlip packingSlip = new PackingSlip();
-        logger.info("Packing slip generated with packing slip id: " + packingSlip.getPacking_slip_id());
+        logger.info("Packing slip generated with packing slip id: " + packingSlip.getPackingSlipId());
         return packingSlip;
     }
 	
@@ -62,7 +62,7 @@ public class InventoryService {
 	
 	public Inventory updateInventory(String inventory_id, Integer shampoo_id, Integer amount_of_stock, String location) {
 		Inventory inventory = new Inventory(Integer.parseInt(inventory_id), shampoo_id, amount_of_stock, location);
-		inventory.setInventory_id(Integer.parseInt(inventory_id));
+		inventory.setInventoryId(Integer.parseInt(inventory_id));
 		return inventoryRepository.save(inventory);
 	}
 	
@@ -80,7 +80,7 @@ public class InventoryService {
 	
 	public Shampoo updateShampoo(String shampoo_id, String name, String brand, String type, Double price) {
 		Shampoo shampoo = new Shampoo(Integer.parseInt(shampoo_id), name , brand, type, price);
-		shampoo.setShampoo_id(Integer.parseInt(shampoo_id));
+		shampoo.setShampooId(Integer.parseInt(shampoo_id));
 		return shampooRespository.save(shampoo);
 	}
 	
@@ -98,7 +98,7 @@ public class InventoryService {
 	
 	public Order updateOrder(String order_id, Double total_order_price) {
 		Order order = new Order(Integer.parseInt(order_id), total_order_price);
-		order.setOrder_id(Integer.parseInt(order_id));
+		order.setOrderId(Integer.parseInt(order_id));
 		return orderRepository.save(order);
 	}
 	
@@ -116,7 +116,7 @@ public class InventoryService {
 	
 	public PackingSlip updatePackingSlip(String packing_slip_id) {
 		PackingSlip packingSlip = new PackingSlip(Integer.parseInt(packing_slip_id));
-		packingSlip.setPacking_slip_id(Integer.parseInt(packing_slip_id));
+		packingSlip.setPackingSlipId(Integer.parseInt(packing_slip_id));
 		return packingSlipRepository.save(packingSlip);
 	}		
 
