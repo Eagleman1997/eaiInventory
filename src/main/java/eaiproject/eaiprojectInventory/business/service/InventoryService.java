@@ -84,23 +84,6 @@ public class InventoryService {
 		return shampooRespository.save(shampoo);
 	}
 	
-	/**
-	 * Order
-	 */
-	public Order createOrder(Integer order_id, Double total_order_price) {
-		Order order = new Order(order_id, total_order_price);
-		return orderRepository.save(order);
-	}
-	
-	public List<Order> readOrderById(String orderId) {
-		return orderRepository.findOrderByOrderId(Integer.parseInt(orderId));
-	}
-	
-	public Order updateOrder(String order_id, Double total_order_price) {
-		Order order = new Order(Integer.parseInt(order_id), total_order_price);
-		order.setOrderId(Integer.parseInt(order_id));
-		return orderRepository.save(order);
-	}
 	
 	/**
 	 * PackingSlip

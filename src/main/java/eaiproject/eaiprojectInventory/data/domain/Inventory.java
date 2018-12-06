@@ -9,7 +9,7 @@ public class Inventory {
 	
 	@Id @GeneratedValue
 	private Integer inventoryId;
-	private Integer shampoo_id;
+	private Integer shampooId;
 	private Integer amount_of_stock;
 	private String location;
 	
@@ -25,7 +25,7 @@ public class Inventory {
 	
 	public Inventory(Integer inventoryId, Integer shampooId, Integer amount_of_stock, String location) {
 		this.inventoryId = inventoryId;
-		this.shampoo_id = shampooId;
+		this.shampooId = shampooId;
 		this.amount_of_stock = amount_of_stock;
 		this.location = location;
 	}
@@ -40,12 +40,12 @@ public class Inventory {
 		this.inventoryId = inventoryId;
 	}
 
-	public Integer getShampoo_id() {
-		return shampoo_id;
+	public Integer getShampooId() {
+		return shampooId;
 	}
 
-	public void setShampoo_id(Integer shampooId) {
-		this.shampoo_id = shampooId;
+	public void setShampooId(Integer shampooId) {
+		this.shampooId = shampooId;
 	}
 
 	public Integer getAmount_of_stock() {
