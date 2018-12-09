@@ -8,9 +8,14 @@ import org.springframework.stereotype.Repository;
 
 import eaiproject.eaiprojectInventory.data.domain.Customer;
 
+/**
+ * For searching the customer in de DB
+ * @param customerId
+ * @author Lukas Weber
+ */
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer, Integer>{
 	
-	public Customer findCustomerByCustomerId(@Param("customer_id") Integer CustomerId);
+	public Customer findCustomerByCustomerId(@Param("customerId") Integer CustomerId);
 
 }

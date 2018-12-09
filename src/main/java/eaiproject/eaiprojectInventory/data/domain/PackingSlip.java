@@ -23,6 +23,11 @@ public class PackingSlip {
 	}
 
 	
+	/**
+	 * Create a new PackingSlip
+	 * @param packingSlipId
+	 * @author Lukas Weber
+	 */
 	public PackingSlip(Integer packingSlipId) {
 		this.packingSlipId = packingSlipId;
 	}

@@ -42,6 +42,13 @@ public class MessageEventListener {
 
     private static Logger logger = LoggerFactory.getLogger(MessageEventListener.class);
 
+    /**
+     * Search for the Call FetchGoods fetch all ordered goods
+     * get the items from the orderMessage and fetch these
+     * @param eventMessage
+     * @throws Exception
+     * @author Lukas Weber
+     */
     @StreamListener(target = Sink.INPUT,
             condition="(headers['type']?:'')=='FetchGoods'")
     @Transactional

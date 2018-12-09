@@ -8,9 +8,14 @@ import org.springframework.stereotype.Repository;
 
 import eaiproject.eaiprojectInventory.data.domain.Order;
 
+/**
+ * For searching the order in de DB
+ * @param orderId
+ * @author Lukas Weber
+ */
 @Repository
 public interface OrderRepository extends JpaRepository<Order, Integer>{
 	
-	public List<Order> findOrderByOrderId(@Param("order_id") Integer OrderId);
+	public List<Order> findOrderByOrderId(@Param("orderId") Integer OrderId);
 
 }

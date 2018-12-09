@@ -8,9 +8,15 @@ import org.springframework.stereotype.Repository;
 
 import eaiproject.eaiprojectInventory.data.domain.PackingSlip;
 
+
+/**
+ * For searching the packingSlip in de DB
+ * @param PackingSlipId
+ * @author Lukas Weber
+ */
 @Repository
 public interface PackingSlipRepository extends JpaRepository<PackingSlip, Integer>{
 	
-	public PackingSlip findPackingSlipByPackingSlipId(@Param("packing_slip_id") Integer PackingSlipId);
+	public PackingSlip findPackingSlipByPackingSlipId(@Param("packingSlipId") Integer PackingSlipId);
 
 }

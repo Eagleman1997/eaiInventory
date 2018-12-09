@@ -22,7 +22,14 @@ public class Inventory {
 	}
 	
 	
-	
+	/**
+	 * Create a new Inventory
+	 * @param inventoryId
+	 * @param shampooId
+	 * @param amount_of_stock
+	 * @param location
+	 * @author Lukas Weber
+	 */
 	public Inventory(Integer inventoryId, Integer shampooId, Integer amount_of_stock, String location) {
 		this.inventoryId = inventoryId;
 		this.shampooId = shampooId;

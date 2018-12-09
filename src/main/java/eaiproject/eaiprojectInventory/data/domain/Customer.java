@@ -35,7 +35,16 @@ public class Customer {
 		super();
 	}
 
-
+	/**
+	 * Create a new customer if its needed
+	 * @param customerId
+	 * @param first_name
+	 * @param last_name
+	 * @param shipping_address_name
+	 * @param shipping_address_street
+	 * @param shipping_address_location
+	 * @author Lukas Weber
+	 */
 	public Customer(Integer customerId, String first_name, String last_name, String shipping_address_name,
 			String shipping_address_street, String shipping_address_location) {
 		this.customerId = customerId;

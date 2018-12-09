@@ -8,8 +8,13 @@ import org.springframework.stereotype.Repository;
 
 import eaiproject.eaiprojectInventory.data.domain.Shampoo;
 
+/**
+ * For searching the shampoo in de DB
+ * @param shampooId
+ * @author Lukas Weber
+ */
 @Repository
 public interface ShampooRepository extends JpaRepository<Shampoo, Integer>{
 
-	public List<Shampoo> findShampoosByShampooId(@Param("shampoo_id") Integer ShampooId);
+	public List<Shampoo> findShampoosByShampooId(@Param("shampooId") Integer ShampooId);
 }

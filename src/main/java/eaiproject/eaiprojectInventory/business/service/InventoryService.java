@@ -32,13 +32,22 @@ public class InventoryService {
 	
 	private Logger logger = LoggerFactory.getLogger(InventoryService.class);
 	
-    public PackingSlip fetchGoods(Long customerId, String reference, List<Shampoo> items) throws Exception {
-        logger.info("fetchGoods() with customerId " + customerId + " and reference " + reference + " called and going to pick "+ items.size() +" items in the inventory");
+	/**
+	 * Get all goods which are ordered
+	 * @param customerId
+	 * @param orderId
+	 * @param shampoos
+	 * @return packingSlip
+	 * @throws Exception
+	 * @author Lukas Weber
+	 */
+    public PackingSlip fetchGoods(Long customerId, String orderId, List<Shampoo> shampoos) throws Exception {
+        logger.info("fetchGoods() with customerId " + customerId + " and orderId " + orderId + " called and going to pick "+ shampoos.size() +" items in the inventory");
         logger.info("In the basket are this items: ");
-        for (Shampoo shampoo : items) {
+        for (Shampoo shampoo : shampoos) {
         	logger.info("Name: " + shampoo.getName(), "Brand: " + shampoo.getBrand() + " Type: " + shampoo.getType());
         }
-        for(long seconds = items.size(); seconds > 0; seconds--) {
+        for(long seconds = shampoos.size(); seconds > 0; seconds--) {
             logger.info(seconds + " items remaining");
             Thread.sleep(1000);
         }
@@ -50,6 +59,8 @@ public class InventoryService {
 	
 	/**
 	 * Invenvory
+	 * Methods for create, read or update Inventories
+	 * @author Lukas Weber
 	 */
 	public Inventory createInventory(Integer inventory_id, Integer shampoo_id, Integer amount_of_stock, String location) {
 		Inventory inventory = new Inventory(inventory_id, shampoo_id, amount_of_stock, location);
@@ -68,6 +79,8 @@ public class InventoryService {
 	
 	/**
 	 * Shampoo
+	 * Methods for create, read or update Shampoos
+	 * @author Lukas Weber
 	 */
 	public Shampoo createShampoo(Integer shampoo_id, String name, String brand, String type, Double price) {
 		Shampoo shampoo = new Shampoo(shampoo_id, name, brand, type, price);
@@ -87,6 +100,8 @@ public class InventoryService {
 	
 	/**
 	 * PackingSlip
+	 * Methods for create, read or update PackingSlips
+	 * @author Lukas Weber
 	 */
 	public PackingSlip createPackingSlip(Integer packing_slip_id) {
 		PackingSlip packingSlip = new PackingSlip(packing_slip_id);

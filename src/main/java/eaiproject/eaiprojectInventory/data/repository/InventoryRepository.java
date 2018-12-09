@@ -8,8 +8,13 @@ import org.springframework.stereotype.Repository;
 
 import eaiproject.eaiprojectInventory.data.domain.Inventory;
 
+/**
+ * For searching the inventory in de DB
+ * @param inventoryId
+ * @author Lukas Weber
+ */
 @Repository
 public interface InventoryRepository extends JpaRepository<Inventory, Integer>{
 
-	public List<Inventory> findInventoryByInventoryId(@Param("inventory_id") Integer InventoryId);
+	public List<Inventory> findInventoryByInventoryId(@Param("inventoryId") Integer InventoryId);
 }
