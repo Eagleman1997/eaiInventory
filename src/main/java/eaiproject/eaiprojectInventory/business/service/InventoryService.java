@@ -52,7 +52,7 @@ public class InventoryService {
             Thread.sleep(1000);
         }
         // ...
-        PackingSlip packingSlip = new PackingSlip();
+        PackingSlip packingSlip = new PackingSlip(new Integer(3433));
         logger.info("Packing slip generated with packing slip id: " + packingSlip.getPackingSlipId());
         return packingSlip;
     }

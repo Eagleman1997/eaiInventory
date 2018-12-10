@@ -21,8 +21,7 @@ public class PackingSlip {
 	public PackingSlip(){
 		super();
 	}
-
-	
+		
 	/**
 	 * Create a new PackingSlip
 	 * @param packingSlipId
